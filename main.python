@@ -1,0 +1,35 @@
+def fibonacci_series(n):
+    """
+    Generates the first 'n' numbers of the Fibonacci series.
+
+    The Fibonacci series is a sequence of numbers where each number
+    is the sum of the two preceding ones, usually starting with 0 and 1.
+    """
+    if n <= 0:
+        return []
+    elif n == 1:
+        return [0]
+    else:
+        series = [0, 1]
+        while len(series) < n:
+            next_num = series[-1] + series[-2]
+            series.append(next_num)
+        return series
+
+# Example usage:
+if __name__ == "__main__":
+    count = 10  # Number of Fibonacci numbers to generate
+    fib_nums = fibonacci_series(count)
+    print(f"The first {count} Fibonacci numbers are: {fib_nums}")
+
+    count_2 = 1
+    fib_nums_2 = fibonacci_series(count_2)
+    print(f"The first {count_2} Fibonacci number is: {fib_nums_2}")
+
+    count_3 = 0
+    fib_nums_3 = fibonacci_series(count_3)
+    print(f"The first {count_3} Fibonacci numbers are: {fib_nums_3}")
+
+    count_4 = 15
+    fib_nums_4 = fibonacci_series(count_4)
+    print(f"The first {count_4} Fibonacci numbers are: {fib_nums_4}")
